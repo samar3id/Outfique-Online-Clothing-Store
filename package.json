@@ -2,6 +2,7 @@
   "name": "outfiquee",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://samar3id.github.io/Outfique-Online-Clothing-Store",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",

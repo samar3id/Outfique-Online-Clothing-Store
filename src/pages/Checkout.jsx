@@ -78,7 +78,6 @@ const Checkout = () => {
                     </div>
                 </div>
 
-                {/* ملخص الطلب */}
                 <div className="col-md-6 mb-4">
                     <div className="card shadow-sm p-4">
                         <h4 className="mb-3">Order Summary</h4>
