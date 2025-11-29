@@ -2,40 +2,35 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
-const Login = () => {
+const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const { login, user } = useContext(AuthContext);
+    const { signup, user } = useContext(AuthContext);
     const navigate = useNavigate();
 
     useEffect(() => {
-        setEmail('');
-        setPassword('');
-        setError('');
-    }, []);
-
-    useEffect(() => {
-        if (!user) { 
+        if (!user) {
             setEmail('');
             setPassword('');
             setError('');
         }
-    }, [user]); 
+    }, [user]);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!email || !password) {
             setError('Please fill in all fields.');
             return;
         }
-        const success = login(email, password);
+        const success = signup(email, password);
         if (success) {
             setEmail('');
             setPassword('');
             setError('');
             navigate('/');
         } else {
-            setError('Invalid email or password.');
+            setError('Sign up failed.');
         }
     };
 
@@ -45,7 +40,7 @@ const Login = () => {
                 <div className="col-md-6">
                     <div className="card shadow">
                         <div className="card-body">
-                            <h2 className="card-title text-center mb-4">Login</h2>
+                            <h2 className="card-title text-center mb-4">Sign Up</h2>
                             {error && <div className="alert alert-danger">{error}</div>}
                             <form onSubmit={handleSubmit}>
                                 <div className="mb-3">
@@ -70,7 +65,7 @@ const Login = () => {
                                         required
                                     />
                                 </div>
-                                <button type="submit" className="btn w-100" style={{background:'rgb(111, 11, 36)',color:'white'}}>Login</button>
+                                <button type="submit" className="btn w-100" style={{ background: 'rgb(111, 11, 36)', color: 'white' }}>Sign Up</button>
                             </form>
                         </div>
                     </div>
@@ -80,4 +75,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default SignUp;

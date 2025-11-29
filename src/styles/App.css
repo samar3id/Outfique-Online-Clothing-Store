@@ -5,27 +5,57 @@ body {
     background-color: #f8f9fa;
     color: #252323;
 }
+html, body, #root {
+    height: 100%;
+}
+.app-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1;
+}
 
 .custom-header {
-    background-color: #ded7d8 !important; /* ضيفي أي لون */
+    background-color: #ded7d8 !important; 
 }
 
 .small-header {
     padding: 0 !important;
-    height: 60px; /* صغّري زي ما تحبي */
+    margin-top: 0px !important;
+    margin-bottom: 10px !important;
 }
-
+.navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.navbar {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+@media (max-width:992px) {
+    .navbar {
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
+}
 .small-navbar {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    height: 0px !important; /* نفس ارتفاع الهيدر */
 }
 
 .small-navbar .navbar-brand,
 .small-navbar .nav-link {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    line-height: 20px; /* خلي النص يتوسّط جوّاً */
+    margin: 5px 20px !important;
+    line-height: 20px; 
+}
+.active-link {
+    color: rgb(111, 11, 36) !important;
 }
 
 .hero-banner {
@@ -36,8 +66,7 @@ body {
     width: 100%;
     min-height: 350px; 
     image-rendering: auto; 
-      border-radius: 20px;
-
+    border-radius: 20px;
 }
  
 .container{
@@ -45,7 +74,7 @@ body {
     font-size: 18px;
     font-family:Arial, Helvetica, sans-serif;
     font-weight: bold;
-padding-top: 70px;
+    padding-top: 70px;
 }
 .lead{
     color: #361d05;
@@ -82,7 +111,7 @@ background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 350px;           /* ارتفاع ثابت — مهم جداً */
+    height: 350px;           
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -92,7 +121,11 @@ background-repeat: no-repeat;
     position: relative;
 }
 
-
+#map {
+  height: 400px; 
+  width: 80%;
+  margin: auto;
+}
 footer {
     background-color: #343a40;
     padding: 15px;
@@ -105,11 +138,12 @@ footer {
     margin-top: 30px;
     margin-bottom: 30px;
 }
-
-/* الكارت الأساسي */
+.fa-instagram {
+    color: #dd00ff;
+}
 .deal-card {
   background-repeat: no-repeat;
-  background-size: cover;      /* يخلي الصورة تغطي الكارت */
+  background-size: cover; 
   background-position: center;
   width: 100%;
   min-height: 350px;
@@ -118,12 +152,10 @@ footer {
   font-size: 25px;
 }
 
-/* الكارت الأول */
 .deal-card.first {
   background-image: url("https://tse1.mm.bing.net/th/id/OIP.3teDwQpMYopdnU_EQrw_rwHaFy?rs=1&pid=ImgDetMain&o=7&rm=3");
 }
 
-/* الكارت الثاني */
 .deal-card.second {
   background-image: url("https://tse2.mm.bing.net/th/id/OIP.mIgVdkO2l-kEMU6CqnoJHAHaEG?w=2000&h=1108&rs=1&pid=ImgDetMain&o=7&rm=3");
 }
@@ -137,20 +169,18 @@ footer {
   box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* تحديث product-list لجعل البطاقات أصغر */
 .product-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* تقليل الحد الأدنى إلى 250px لجعلها أصغر */
-    gap: 15px; /* تقليل المسافة بين العناصر قليلاً */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px; 
     justify-items: center;
     padding: 20px;
 }
 
-/* تحسين product-card لتكون أصغر */
 .product-card {
     border: none;
     border-radius: 10px;
-    padding: 15px; /* تقليل padding إلى 15px لجعل البطاقة أكثر إحكامًا */
+    padding: 15px; 
     margin: 0;
     text-align: center;
     background-color: white;
@@ -166,31 +196,30 @@ footer {
 
 .product-card img {
     width: 100%;
-    height: 150px; /* تقليل ارتفاع الصورة إلى 150px لجعل البطاقة أصغر */
+    height: 150px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 10px; /* تقليل المسافة تحت الصورة */
+    margin-bottom: 10px;
 }
 
 .product-card h3 {
-    font-size: 1.1rem; /* تقليل حجم الخط قليلاً */
+    font-size: 1.1rem;
     margin-bottom: 8px;
     color: #495057;
 }
 
 .product-card p {
-    font-size: 0.85rem; /* تقليل حجم الخط قليلاً */
+    font-size: 0.85rem; 
     color: #6c757d;
     margin-bottom: 12px;
 }
 
 .product-card .btn {
-    margin: 3px; /* تقليل المسافة بين الأزرار */
+    margin: 3px;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 0.9rem; /* تقليل حجم خط الأزرار */
+    font-size: 0.9rem; 
 }
-/* تحسينات لصفحة Contact */
 .contact-page .hero-section {
     background: linear-gradient(to right, #bcc3ca, #e9ecef);
 }
@@ -224,13 +253,122 @@ footer {
     box-shadow: 0 15px 30px rgba(131, 76, 76, 0.1);
 }
 
-/* تحسينات للشاشات الصغيرة (responsive) */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .navbar,
+.dark-mode .custom-header {
+    background-color: #1c1c1c;
+}
+
+.dark-mode header nav a {
+    color: #e0e0e0;
+    text-shadow: 0 0 3px #000; 
+}
+
+.dark-mode header nav a:hover {
+    color: #68b3be;
+}
+
+.dark-mode .product-card,
+.dark-mode .value-card,
+.dark-mode .review-card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.dark-mode .deal-card h3,
+.dark-mode .deal-card p,
+.dark-mode .hero-banner h1,
+.dark-mode .about-hero-section h1 {
+    color: #fff; 
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7); 
+}
+
+.dark-mode .btn {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.dark-mode .btn:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+.dark-mode footer {
+    background-color: #1c1c1c;
+    color: #e0e0e0;
+}
+
+.dark-mode .container,
+.dark-mode .lead,
+.dark-mode .category-link {
+    color: #ac4949;
+}
+
+.dark-mode #map {
+    filter: brightness(0.85);
+}
+.dark-mode .product-card,
+.dark-mode .value-card,
+.dark-mode .review-card {
+    background-color: #1e1e1e;
+    color: #ffffff; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.dark-mode .deal-card h3,
+.dark-mode .deal-card p,
+.dark-mode .hero-banner h1,
+.dark-mode .about-hero-section h1 {
+    color: #ffffff; 
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7); }
+
+.dark-mode .container,
+.dark-mode .lead,
+.dark-mode .category-link {
+    color: #8e3434; 
+}
+.cart-badge {
+          position: absolute;
+          top: -5px;
+          right: -10px;
+          background-color: #d63384;
+          color: #fff;
+          font-size: 12px;
+          font-weight: bold;
+          border-radius: 50%;
+          padding: 2px 6px;
+        }
+        .nav-link:hover {
+          color: #68b3be !important;
+        }
+        .active-link {
+          color: #6f0b24 !important;
+          font-weight: 600;
+        }
+        @media (max-width: 768px) {
+          .navbar-nav .btn-sm {
+            margin-bottom: 5px;
+          }
+          .cart-badge {
+            top: -4px;
+            right: -6px;
+            font-size: 11px;
+            padding: 1px 5px;
+          }
+        }
+
 @media (max-width: 768px) {
     .product-list {
-        grid-template-columns: 1fr; /* عمود واحد على الهواتف */
-        gap: 10px; /* مسافة أصغر على الهواتف */
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
     .product-card {
-        padding: 10px; /* padding أصغر على الهواتف */
+        padding: 10px; 
     }
 }

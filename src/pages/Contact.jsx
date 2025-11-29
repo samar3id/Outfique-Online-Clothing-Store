@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Map from "./../components/Map";
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -17,13 +17,11 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         alert('Thank you for your message! We will get back to you soon.');
-        // هنا يمكن إضافة منطق إرسال البريد (مثل Firebase أو API)
         setFormData({ name: '', email: '', message: '' });
     };
 
     return (
         <div className="contact-page">
-            {/* قسم المقدمة */}
             <section className="contact-hero-section py-5">
                 <div className="container text-center">
                     <h1 className="display-4">Contact Us</h1>
@@ -37,7 +35,6 @@ At Outfique, we’re here to make the shopping and styling experience smooth,
                 </div>
             </section>
 
-            {/* نموذج الاتصال ومعلومات */}
             <section className="contact-section py-5">
                 <div className="container">
                     <div className="row">
@@ -80,7 +77,7 @@ At Outfique, we’re here to make the shopping and styling experience smooth,
                                         required
                                     ></textarea>
                                 </div>
-                                <button type="submit" className="btn btn-primary">Send Message</button>
+                                <button type="submit" className="btn" style={{background:'rgb(111, 11, 36)', color:'white'}}>Send Message</button>
                             </form>
                         </div>
                         <div className="col-md-6">
@@ -115,25 +112,7 @@ At Outfique, we’re here to make the shopping and styling experience smooth,
                 </div>
             </section>
 
-            {/* خريطة */}
-                  <section className="map-section py-5 bg-light">
-                <div className="container">
-                    <h2 className="text-center mb-4">Find Us</h2>
-                    <div className="text-center">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.789!2d31.3342!3d29.8414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458b1234567890%3A0xabcdef123456!2sHelwan%2C%20Cairo%20Governorate%2C%20Egypt!5e0!3m2!1sen!2seg!4v1698765432100!5m2!1sen!2seg"
-                            width="100%"
-                            height="400"
-                            style={{ border: 0 }}
-                            allowFullScreen=""
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            title="Helwan Location Map"
-                        ></iframe>
-                        <p className="mt-3">Visit our store in Helwan, Cairo, Egypt. The marker shows the exact location.</p>
-                    </div>
-                </div>
-            </section>
+            <Map/>
         </div>
     );
 };

@@ -17,11 +17,11 @@ const Products = () => {
     return (
         <div className="container">
             <h1>Products</h1>
-            <div className="input-group mb-3"> {/* أضفت input-group هنا */}
-                <span className="input-group-text">🔍</span> {/* الأيقونة هنا بدلاً من النص */}
+            <div className="input-group mb-3"> 
+                <span className="input-group-text">🔍</span> 
                 <input
                     type="text"
-                    placeholder="" // خليت الـ placeholder فارغ
+                    placeholder="" 
                     className="form-control"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}

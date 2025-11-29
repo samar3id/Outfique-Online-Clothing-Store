@@ -135,7 +135,7 @@ const About = () => {
         <Link 
             to="/contact"
             className="btn btn-primary px-4 py-2 rounded-pill btn-lg shadow"
-            style={{ fontSize: "18px" }}
+            style={{background:'rgb(111, 11, 36)',color:'white',fontSize: "18px",border:'none'}}
         >
             Contact Us
         </Link>

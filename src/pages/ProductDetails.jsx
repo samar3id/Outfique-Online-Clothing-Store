@@ -50,7 +50,6 @@ const ProductDetails = () => {
                         </div>
                     )}
 
-                    {/* اختيار الحجم */}
                     {product.sizes && (
                         <div className="mb-3">
                             <label className="form-label"><strong>Size:</strong></label>
@@ -72,12 +71,10 @@ const ProductDetails = () => {
                 </div>
             </div>
 
-            {/* قسم إضافي للتفاصيل */}
             <div className="row mt-5">
                 <div className="col-12">
                     <h3>Product Details</h3>
                     <p>This product is made from high-quality materials and is perfect for everyday use. Check reviews below!</p>
-                    {/* يمكن إضافة reviews هنا إذا أردت */}
                 </div>
             </div>
         </div>

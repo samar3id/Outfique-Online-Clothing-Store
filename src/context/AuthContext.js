@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useEffect } from 'react';
 
 export const AuthContext = createContext();
@@ -7,7 +8,6 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // تحقق من localStorage عند التحميل
         const savedUser = localStorage.getItem('user');
         if (savedUser) {
             setUser(JSON.parse(savedUser));
@@ -16,14 +16,25 @@ const AuthProvider = ({ children }) => {
     }, []);
 
     const login = (email, password) => {
-        // محاكاة تسجيل دخول بسيط (في الواقع، هنا تستخدم API)
-        if (email === 'samareid@gmail.com' && password === '1234') {
+        if (email === "samareid@gmail.com" && password === "1234") {
             const userData = { email };
+
             setUser(userData);
-            localStorage.setItem('user', JSON.stringify(userData));
-            return true;
+            localStorage.setItem("user", JSON.stringify(userData));
+
+            return { success: true };
         }
-        return false;
+
+        return { success: false, message: "Invalid email or password" };
+    };
+
+    const signup = (email, password) => {
+        const userData = { email };
+
+        setUser(userData);
+        localStorage.setItem("user", JSON.stringify(userData));
+
+        return { success: true };
     };
 
     const logout = () => {
@@ -32,7 +43,7 @@ const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, logout, loading }}>
+        <AuthContext.Provider value={{ user, login, signup, logout, loading }}>
             {children}
         </AuthContext.Provider>
     );

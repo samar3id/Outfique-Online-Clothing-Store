@@ -4,8 +4,7 @@ import useFetch from '../hooks/useFetch';
 import ProductCard from '../components/ProductCard';
 
 const Home = () => {
-    // جلب المزيد من المنتجات للصفحة الرئيسية
-    const { data: products, loading, error } = useFetch('https://fakestoreapi.com/products?limit=20'); // جلب 20 منتجًا
+    const { data: products, loading, error } = useFetch('https://fakestoreapi.com/products?limit=20');  
 
     if (loading) return <div className="text-center">Loading...</div>;
     if (error) return <div className="text-center">Error: {error.message}</div>;
@@ -17,7 +16,7 @@ const Home = () => {
                 <div className="container">
                     <h1 className="display-4">Welcome to Outfique!</h1>
                     <p className="lead">Discover the latest fashion and trends. Shop now and get exclusive deals!</p>
-                    <Link to="/products" className="btn btn-lg rounded-pill" style={{ backgroundColor: '#6f0b24ff', color: 'white' }}>Shop Now</Link>
+                    <Link to="/products?category=clothing" className="btn btn-lg rounded-pill" style={{ backgroundColor: '#6f0b24ff', color: 'white' }}>Shop Now</Link>
                 </div>
             </section>
 
@@ -27,19 +26,19 @@ const Home = () => {
                     <h2 className="text-center mb-4">Shop by Category</h2>
                     <div className="row">
                         <div className="col-md-4 text-center">
-                            <Link to="/products" className="category-link">
+                            <Link to="/products?category=clothing" className="category-link">
                                 <img src="https://img.freepik.com/premium-photo/reduce-reuse-concept-preparing-clothes-swap-waste-problem-fashion-industry_89386-2510.jpg?w=2000" alt="Clothing" className="img-fluid rounded-circle mb-2" />
                                 <h5>Clothing</h5>
                             </Link>
                         </div>
                         <div className="col-md-4 text-center">
-                            <Link to="/products" className="category-link">
+                            <Link to="/products?category=jewelry" className="category-link">
                                 <img src="https://tse4.mm.bing.net/th/id/OIP.sJuPYPx04Mx3-Ds9eQjmKwHaE8?w=1536&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Jewelry" className="img-fluid rounded-circle mb-2" />
                                 <h5>Jewelry</h5>
                             </Link>
                         </div>
                         <div className="col-md-4 text-center">
-                            <Link to="/products" className="category-link">
+                            <Link to="/products?category=accessories" className="category-link">
                                 <img src="https://th.bing.com/th/id/R.446857457f75db15527d250c807c5bb9?rik=a9JHvM8sCC%2boJQ&pid=ImgRaw&r=0" alt="Accessories" className="img-fluid rounded-circle mb-2" />
                                 <h5>Accessories</h5>
                             </Link>
@@ -53,7 +52,7 @@ const Home = () => {
                 <div className="container">
                     <h2 className="text-center mb-4">Featured Products</h2>
                     <div className="product-list">
-                        {products.slice(0, 8).map((product) => ( // عرض 8 منتجات
+                        {products.slice(0, 8).map((product) => ( 
                             <ProductCard key={product.id} product={product} />
                         ))}
                     </div>
@@ -68,12 +67,12 @@ const Home = () => {
                 <div className="container">
                     <h2 className="text-center mb-4">Best Sellers</h2>
                     <div className="product-list">
-                        {products.slice(8, 16).map((product) => ( // عرض 8 منتجات أخرى
+                        {products.slice(8, 16).map((product) => ( 
                             <ProductCard key={product.id} product={product} />
                         ))}
                     </div>
                     <div className="text-center mt-4">
-                        <Link to="/products" className="btn rounded-pill" style={{ backgroundColor: '#f0abe1ff', color: 'black' }}>See More Best Sellers</Link>
+                        <Link to="/products" className="btn rounded-pill" style={{ backgroundColor: 'rgb(111, 11, 36)', color:'white'}}>See More Best Sellers</Link>
                     </div>
                 </div>
             </section>
@@ -83,7 +82,7 @@ const Home = () => {
                 <div className="container">
                     <h2 className="text-center mb-4">New Arrivals</h2>
                     <div className="product-list">
-                        {products.slice(16, 20).map((product) => ( // عرض 4 منتجات جديدة
+                        {products.slice(16, 20).map((product) => (  
                             <ProductCard key={product.id} product={product} />
                         ))}
                     </div>
@@ -102,7 +101,7 @@ const Home = () => {
         <div className="deal-card first text-red p-4 rounded">
           <h4>Up to 30% Off!</h4>
           <p>Limited time offer on selected items.</p>
-          <Link to="/products" className="btn rounded-pill" style={{ backgroundColor: '#800020', color: 'white' }}>Shop Deals</Link>
+          <Link to="/products?deal=true" className="btn rounded-pill" style={{ backgroundColor: '#800020', color: 'white' }}>Shop Deals</Link>
         </div>
       </div>
 
