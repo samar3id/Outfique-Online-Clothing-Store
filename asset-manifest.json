@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Outfique-Online-Clothing-Store/static/css/main.1aa44547.css",
+    "main.js": "/Outfique-Online-Clothing-Store/static/js/main.251d4a17.js",
+    "index.html": "/Outfique-Online-Clothing-Store/index.html",
+    "main.1aa44547.css.map": "/Outfique-Online-Clothing-Store/static/css/main.1aa44547.css.map",
+    "main.251d4a17.js.map": "/Outfique-Online-Clothing-Store/static/js/main.251d4a17.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1aa44547.css",
+    "static/js/main.251d4a17.js"
+  ]
+}
