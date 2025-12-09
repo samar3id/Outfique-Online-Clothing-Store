@@ -539,15 +539,18 @@ footer .social-icons .fa-instagram:hover,
     background-blend-mode: multiply;
     background-color: #15151585;
 }
+.dark-mode footer a, footer .fa-instagram {
+    color: rgb(160, 61, 61) !important;
+}
 @media (max-width: 768px) {
     .navbar-nav .btn-sm {
-    margin-bottom: 5px;
+        margin-bottom: 5px;
     }
     .cart-badge {
-    top: -4px;
-    right: -6px;
-    font-size: 11px;
-    padding: 1px 5px;
+        top: -4px;
+        right: -6px;
+        font-size: 11px;
+        padding: 1px 5px;
     }
 } 
 
