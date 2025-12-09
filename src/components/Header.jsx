@@ -15,20 +15,20 @@ const Header = () => {
     <header className={`fixed-top shadow ${isDarkMode ? 'dark-mode' : 'custom-header'}`}>
       <nav className="navbar navbar-expand-lg container py-2">
 
-        <NavLink className="navbar-brand fw-bold fs-4" to="/" style={{ fontFamily: 'Amiri', textTransform: 'uppercase' }}>
+        <NavLink className="navbar-brand fw-bold" to="/Outfique-Online-Clothing-Store" style={{ fontFamily: 'Italianno', textTransform: 'capitalize', fontSize:'32px', color:'#1c1c1c'}}>
           Outfique
         </NavLink>
 
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
             aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
+            <i className="fa-solid fa-bars menu-icon"></i>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarNav">
 
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            {['/', '/products', '/about', '/contact'].map((path, idx) => {
+            {['/Outfique-Online-Clothing-Store', '/products', '/about', '/contact'].map((path, idx) => {
               const names = ['Home', 'Products', 'About', 'Contact'];
               return (
                 <li className="nav-item" key={idx}>
@@ -55,22 +55,22 @@ const Header = () => {
             ) : (
               <>
                 <li className="nav-item me-2">
-                  <NavLink className="btn btn-outline-light btn-sm" to="/login">Login</NavLink>
+                  <NavLink className="btn btn-outline-light btn-sm marg" to="/login">Login</NavLink>
                 </li>
                 <li className="nav-item me-2">
-                  <NavLink className="btn btn-outline-light btn-sm" to="/signup">Sign Up</NavLink>
+                  <NavLink className="btn btn-outline-light btn-sm marg" to="/signup">Sign Up</NavLink>
                 </li>
               </>
             )}
 
             <li className="nav-item me-2">
-              <button onClick={toggleTheme} className="btn btn-light btn-sm">
+              <button onClick={toggleTheme} className="btn btn-sm">
                 {isDarkMode ? '☀️' : '🌙'}
               </button>
             </li>
 
             <li className="nav-item position-relative">
-              <NavLink className="nav-link position-relative" to="/cart">
+              <NavLink className="nav-link position-relative" to="/cart" style={{margin: '0'}}>
                 🛒
                 {totalItems > 0 && (
                   <span className="cart-badge">{totalItems}</span>

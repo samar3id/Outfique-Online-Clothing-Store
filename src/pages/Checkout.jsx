@@ -27,10 +27,18 @@ const Checkout = () => {
             return;
         }
 
-        console.log('Order Details:', { cart, ...formData });
+        const order = { cart, ...formData, date: new Date().toISOString() };
+
+        let orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+        orders.push(order);
+
+        localStorage.setItem('orders', JSON.stringify(orders));
+
         alert('Thank you for your order!');
-        navigate('/'); 
+        navigate('/');
     };
+
 
     return (
         <div className="container py-5">

@@ -22,18 +22,19 @@ const Login = () => {
             setError('');
         }
     }, [user]); 
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!email || !password) {
             setError('Please fill in all fields.');
             return;
         }
-        const success = login(email, password);
-        if (success) {
+        const result = login(email, password);
+        if (result.success) {
             setEmail('');
             setPassword('');
             setError('');
-            navigate('/');
+            navigate('/admin');
         } else {
             setError('Invalid email or password.');
         }
@@ -43,7 +44,7 @@ const Login = () => {
         <div className="container py-5">
             <div className="row justify-content-center">
                 <div className="col-md-6">
-                    <div className="card shadow">
+                    <div className="card shadow log">
                         <div className="card-body">
                             <h2 className="card-title text-center mb-4">Login</h2>
                             {error && <div className="alert alert-danger">{error}</div>}

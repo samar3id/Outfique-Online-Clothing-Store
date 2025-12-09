@@ -3,36 +3,33 @@ import productsData from '../data/products.json';
 
 const useFetch = (url) => {
     const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchData = () => {
             try {
-                if (url.includes('products')) {
-                    if (url === 'https://fakestoreapi.com/products' || url.includes('products?limit=')) {
-                        setData(productsData);
-                    } else if (url.includes('/products/')) {
-                        const id = url.split('/').pop();
-                        const product = productsData.find(p => p.id === parseInt(id));
-                        setData(product || {});
-                    }
-                } else {
-                    const response = await fetch(url);
-                    const result = await response.json();
-                    setData(result);
+                if (url === 'https://fakestoreapi.com/products') {
+                    setData(productsData); 
+                } 
+                else if (url.includes('products?limit=')) {
+                    const limit = Number(url.split('limit=')[1]);
+                    const limitedProducts = productsData.slice(0, limit); 
+                    setData(limitedProducts);
+                }
+                else if (url.includes('/products/')) {
+                    const id = url.split('/').pop();
+                    const product = productsData.find(p => p.id === parseInt(id));
+                    setData(product || {});
                 }
             } catch (err) {
                 setError(err);
-            } finally {
-                setLoading(false);
             }
         };
 
         fetchData();
     }, [url]);
 
-    return { data, loading, error };
+    return { data, error };
 };
 
 export default useFetch;

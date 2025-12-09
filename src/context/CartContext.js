@@ -32,7 +32,7 @@ const CartProvider = ({ children }) => {
         } else {
             setCart(cart.map((item) =>
                 item.id === productId && item.selectedColor === selectedColor && item.selectedSize === selectedSize
-                    ? { ...item, quantity }
+                    ? { ...item, quantity: quantity }
                     : item
             ));
         }

@@ -5,13 +5,12 @@ import { CartContext } from '../context/CartContext';
 
 const ProductDetails = () => {
     const { id } = useParams();
-    const { data: product, loading, error } = useFetch(`https://fakestoreapi.com/products/${id}`);
+    const { data: product, error } = useFetch(`https://fakestoreapi.com/products/${id}`);
     const { addToCart } = useContext(CartContext);
 
     const [selectedColor, setSelectedColor] = useState(product.colors ? product.colors[0] : '');
     const [selectedSize, setSelectedSize] = useState(product.sizes ? product.sizes[0] : '');
 
-    if (loading) return <div className="text-center">Loading...</div>;
     if (error) return <div className="text-center">Error: {error.message}</div>;
     if (!product || !product.id) return <div className="text-center">Product not found.</div>;
 
@@ -21,20 +20,19 @@ const ProductDetails = () => {
     };
 
     return (
-        <div className="container py-5">
+        <div className="container py-5 datailed">
             <div className="row">
                 <div className="col-md-6">
                     <img src={product.image} alt={product.title} className="img-fluid rounded shadow" />
                 </div>
                 <div className="col-md-6">
                     <h1>{product.title}</h1>
-                    <p className="text-muted">{product.description}</p>
+                    <p>{product.description}</p>
                     <p><strong>Price:</strong> ${product.price.toFixed(2)}</p>
                     <p><strong>Rating:</strong> {product.rating} ⭐</p>
                     <p><strong>Material:</strong> {product.material}</p>
                     <p><strong>Availability:</strong> {product.availability}</p>
 
-                    {/* اختيار اللون */}
                     {product.colors && (
                         <div className="mb-3">
                             <label className="form-label"><strong>Color:</strong></label>

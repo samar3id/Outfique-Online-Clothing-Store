@@ -6,7 +6,7 @@ const ShoppingCart = () => {
     const { cart, removeFromCart, updateQuantity, getTotal } = useContext(CartContext);
 
     return (
-        <div className="container py-5">
+        <div className="container py-5 shcart">
             <h1 className="text-center mb-4">Your Shopping Cart</h1>
             {cart.length === 0 ? (
                 <p className="text-center">Your cart is empty.</p>
@@ -22,7 +22,7 @@ const ShoppingCart = () => {
                                             <div>
                                                 <h5>{item.title}</h5>
                                                 <p className="mb-1">${item.price.toFixed(2)} each</p>
-                                                <small className="text-muted">
+                                                <small>
                                                     Color: {item.selectedColor || 'N/A'}, Size: {item.selectedSize || 'N/A'}
                                                 </small>
                                                 <br />
@@ -54,9 +54,9 @@ const ShoppingCart = () => {
                         <div className="col-12 text-end">
                             <h3>Grand Total: ${getTotal()}</h3>
                             <Link to="/checkout" className="btn btn-success btn-lg me-2">
-    Proceed to Checkout
-</Link>
-                            <button className="btn btn-secondary btn-lg">Continue Shopping</button>
+                                Proceed to Checkout
+                            </Link>
+                            <Link to={'/'} className="btn btn-secondary btn-lg">Continue Shopping</Link>
                         </div>
                     </div>
                 </>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -19,17 +19,18 @@ const App = () => {
     return (
         <ThemeProvider>
             <div className="app-wrapper">
-                <Router>
+                <BrowserRouter>
                     <Header />
                     <div className="content-wrapper">
                         <Routes>
                             <Route path="/" element={<Home />} />
+                            <Route path="/Outfique-Online-Clothing-Store" element={<Home />} />
                             <Route path="/products" element={<Products />} />
                             <Route path="/product/:id" element={<ProductDetails />} />
                             <Route path="/about" element={<About />} />
                             <Route path="/cart" element={<ShoppingCart />} />
                             <Route path="/contact" element={<Contact />} />
-                            <Route path="/login" element={<Login />} key={Date.now()} />
+                            <Route path="/login" element={<Login />}/>
                             <Route path="/signup" element={<SignUp />} />
                             <Route path="/admin" element={<Admin />} />
                             <Route path="/checkout" element={<Checkout />} />
@@ -37,7 +38,7 @@ const App = () => {
                         </Routes>
                     </div>
                     <Footer />
-                </Router>
+                </BrowserRouter>
             </div>
         </ThemeProvider>  
     );

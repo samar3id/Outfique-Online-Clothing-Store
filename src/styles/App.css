@@ -1,7 +1,7 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
+    padding-top: 75px;
     background-color: #f8f9fa;
     color: #252323;
 }
@@ -33,15 +33,10 @@ html, body, #root {
     box-shadow: none !important;
 }
 .navbar {
-    margin-top: 15px !important;
-    margin-bottom: 15px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
-@media (max-width:992px) {
-    .navbar {
-        margin-top: 10px !important;
-        margin-bottom: 10px !important;
-    }
-}
+
 .small-navbar {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -58,34 +53,25 @@ html, body, #root {
     color: rgb(111, 11, 36) !important;
 }
 
-.hero-banner {
-    background-image: url("https://capsulesight.com/133-BenefitsARMarketing-feature.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    min-height: 350px; 
-    image-rendering: auto; 
-    border-radius: 20px;
-}
  
 .container{
     color: #2a1111;
     font-size: 18px;
     font-family:Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    padding-top: 70px;
-}
-.lead{
-    color: #361d05;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 250px;
-    font-weight: bold;
 }
 
 header nav a {
     color: white;
-    margin: 0 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold !important;
+    transition: color 0.3s;
+}
+
+header nav a.marg {
+    color: rgba(14, 24, 25, 0.682);
+    border: 1px solid rgba(14, 24, 25, 0.682);
+    margin: 0 !important;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
@@ -95,15 +81,34 @@ header nav a:hover {
     color: #68b3be;
 }
 
+.navbar .btn {
+    background-color: #ded7d888;
+    color: #555;
+    border: 1px solid #555;
+}
+
+.navbar .btn:hover {
+    background-color: #fff5f7;
+    color: #555;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 96vh;
+}
+
 .about-hero-section{
     background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20230703/pngtree-a-rack-of-fashionable-attire-hanging-in-3d-on-pastel-beige-image_3749199.jpg");
-background-repeat: no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 100%;
-    min-height: 250px; 
-    image-rendering: auto; 
-      border-radius: 20px;
+    min-height: 300px; 
+    border-radius: 20px;
 } 
 .contact-hero-section {
     background-color: #e1e9f3;
@@ -170,10 +175,11 @@ footer {
 }
 
 .product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 15px; 
-    justify-items: center;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
@@ -187,6 +193,7 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
+    width: 290px;
 }
 
 .product-card:hover {
@@ -254,25 +261,43 @@ footer {
 }
 
 
+
+
 .dark-mode {
     background-color: #121212;
     color: #e0e0e0;
 }
-
-.dark-mode .navbar,
+.dark-mode .menu-icon {
+    color: white !important;
+}
+.dark-mode header,
 .dark-mode .custom-header {
     background-color: #1c1c1c;
 }
-
 .dark-mode header nav a {
     color: #e0e0e0;
     text-shadow: 0 0 3px #000; 
 }
-
+.dark-mode .navbar-brand {
+    color: #d299a7 !important;
+}
+.dark-mode header span {
+    color: white;
+}
 .dark-mode header nav a:hover {
     color: #68b3be;
 }
-
+.dark-mode .featured-products,
+.dark-mode .new-arrivals,
+.dark-mode .reviews {
+    background-color: #222 !important;
+}
+.dark-mode .reviews .review-card{
+    background-color: #1e1e1e !important;
+}
+.dark-mode .reviews .review-card h6{
+    color: rgb(166, 166, 166) !important;
+}
 .dark-mode .product-card,
 .dark-mode .value-card,
 .dark-mode .review-card {
@@ -294,10 +319,22 @@ footer {
     color: #fff;
     border: 1px solid #555;
 }
-
+.dark-mode .pro input, .dark-mode .pro span{
+    background-color: #222;
+    color: white;
+    border: none;
+}
+.dark-mode .pro input::placeholder{
+    color: white;
+}
 .dark-mode .btn:hover {
     background-color: #555;
     color: #fff;
+}
+.dark-mode .datailed select {
+    background-color: #222;
+    border: none;
+    color: white;
 }
 
 .dark-mode footer {
@@ -357,22 +394,83 @@ footer {
     color: #953e3e; 
     text-shadow: 0 2px 6px rgba(0,0,0,0.7); 
 }
-    .dark-mode .about-content {
+.dark-mode .about-content {
     color: #9e3636; 
 }
 
+.dark-mode .values-section {
+    background-color: #bca28a !important;
+}
+.dark-mode .values-section .value-card{
+    background-color: #222 !important;
+}
+.dark-mode .contact-section{
+    background-color: #222 !important;
+}
+.dark-mode .contact-page form {
+    background-color: #121212;
+}
 
-        @media (max-width: 768px) {
-          .navbar-nav .btn-sm {
-            margin-bottom: 5px;
-          }
-          .cart-badge {
-            top: -4px;
-            right: -6px;
-            font-size: 11px;
-            padding: 1px 5px;
-          }
-        } 
+.dark-mode .contact-page form input, 
+.dark-mode .contact-page form textarea{
+    background-color: #222;
+    color: white;
+    border: none;
+}
+.dark-mode .contact-hero-section {
+    background-color: #3c4b5e;
+}
+.dark-mode .contact-hero-section h1,
+.dark-mode .contact-hero-section p{
+    color: rgb(253, 80, 80);
+}
+.dark-mode .log,
+.dark-mode .sign{
+    background-color: #222;
+    color: white;
+}
+.dark-mode .log input,
+.dark-mode .sign input{
+    background-color: #121212;
+    color: white;
+    border: none;
+}
+.dark-mode .shcart li {
+    background-color: #222;
+    color: white !important;
+}
+.dark-mode .shcart li input{
+    background-color: #333;
+    color: white;
+}
+.dark-mode .adm input {
+    background-color: #222;
+    border: none;
+    color: white;
+}
+.dark-mode .adm .card {
+    background-color: #222 !important;
+    color: white;
+}
+.dark-mode .adm input::placeholder {
+    color: rgb(159, 159, 159);
+}
+.dark-mode .banner {
+    background-image: url(../images/darkbg.jpg);
+    background-blend-mode: multiply;
+    background-color: #15151585;
+}
+@media (max-width: 768px) {
+    .navbar-nav .btn-sm {
+    margin-bottom: 5px;
+    }
+    .cart-badge {
+    top: -4px;
+    right: -6px;
+    font-size: 11px;
+    padding: 1px 5px;
+    }
+} 
 
 @media (max-width: 768px) {
     .product-list {
