@@ -14,7 +14,7 @@ const Home = () => {
                 <div className="container text-center">
                     <h1 className="display-4">Welcome to Outfique!</h1>
                     <p>Discover the latest fashion and trends. Shop now and get exclusive deals!</p>
-                    <Link to="/products?category=clothing" className="btn btn-lg rounded-pill" style={{ backgroundColor: '#6f0b24ff', color: 'white' }}>Shop Now</Link>
+                    <Link to="/products" className="btn btn-lg rounded-pill" style={{ backgroundColor: '#6f0b24ff', color: 'white' }}>Shop Now</Link>
                 </div>
             </section>
 
