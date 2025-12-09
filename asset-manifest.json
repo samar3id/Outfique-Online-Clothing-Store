@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/Outfique-Online-Clothing-Store/static/css/main.d8f09db1.css",
-    "main.js": "/Outfique-Online-Clothing-Store/static/js/main.251d4a17.js",
+    "main.css": "/Outfique-Online-Clothing-Store/static/css/main.4185aa29.css",
+    "main.js": "/Outfique-Online-Clothing-Store/static/js/main.914531cf.js",
+    "static/media/bg.jpg": "/Outfique-Online-Clothing-Store/static/media/bg.25e621d40f125df5fbaf.jpg",
+    "static/media/darkbg.jpg": "/Outfique-Online-Clothing-Store/static/media/darkbg.a7493f4cb8c1e7877d83.jpg",
     "index.html": "/Outfique-Online-Clothing-Store/index.html",
-    "main.d8f09db1.css.map": "/Outfique-Online-Clothing-Store/static/css/main.d8f09db1.css.map",
-    "main.251d4a17.js.map": "/Outfique-Online-Clothing-Store/static/js/main.251d4a17.js.map"
+    "main.4185aa29.css.map": "/Outfique-Online-Clothing-Store/static/css/main.4185aa29.css.map",
+    "main.914531cf.js.map": "/Outfique-Online-Clothing-Store/static/js/main.914531cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8f09db1.css",
-    "static/js/main.251d4a17.js"
+    "static/css/main.4185aa29.css",
+    "static/js/main.914531cf.js"
   ]
 }
