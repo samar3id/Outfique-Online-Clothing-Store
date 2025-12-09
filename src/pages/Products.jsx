@@ -19,13 +19,13 @@ const Products = () => {
   }
 
   if (section === 'featured') {
-    displayedProducts = productsData.slice(0, 8);
+    displayedProducts = productsData.slice(0, 10);
   } 
   else if (section === 'best') {
-    displayedProducts = productsData.slice(8, 16);
+    displayedProducts = productsData.slice(10, 20);
   } 
   else if (section === 'new') {
-    displayedProducts = productsData.slice(16, 20);
+    displayedProducts = productsData.slice(20, 25);
   }
 
   if (category) {
